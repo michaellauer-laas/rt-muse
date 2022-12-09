@@ -8,6 +8,7 @@
 #include <stdarg.h>
 #include <stdlib.h>
 #include <time.h>
+#include <unistd.h>
 
 #include "rt-bench_types.h"
 

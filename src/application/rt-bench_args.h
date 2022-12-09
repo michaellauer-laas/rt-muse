@@ -2,7 +2,8 @@
 #define _RT_BENCH_ARGS_H_
 
 /* for CPU_SET macro */
-#define _GNU_SOURCE
+
+#include <dl_syscalls.h>
 
 #include <stdlib.h>
 #include <stdio.h>
@@ -11,10 +12,10 @@
 #include <getopt.h>
 #include <sys/stat.h>
 #include <string.h>
-#include <json/json.h>
+#include <json-c/json.h>
 #include <sys/types.h>
 #include <fcntl.h>
-#include <dl_syscalls.h>
+
 
 #include "rt-bench_types.h"
 #include "rt-bench_utils.h"

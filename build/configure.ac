@@ -18,7 +18,7 @@ AC_OUTPUT
 AC_CHECK_LIB([pthread], [pthread_mutex_init], [], [
               echo "ERROR: pthread library is missing"
               exit -1])
-AC_CHECK_LIB([json], [json_object_get_int], [], [
+AC_CHECK_LIB([json-c], [json_object_get_int], [], [
               echo "ERROR: json library is missing"
               exit -1])
 AC_CHECK_LIB([m], [round])

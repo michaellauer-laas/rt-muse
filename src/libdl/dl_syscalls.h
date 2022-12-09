@@ -20,6 +20,7 @@
 #include <linux/unistd.h>
 #include <time.h>
 #include <linux/types.h>
+#include <unistd.h>
 
 #define SCHED_DEADLINE	6
 

@@ -14,6 +14,10 @@
 #define EXIT_SUCCESS 0
 #define EXIT_FAILURE 1
 
+/* boolean */
+#define FALSE 0
+#define TRUE  0
+
 typedef struct _ftrace_data_t {
   char *debugfs;
   int trace_fd;

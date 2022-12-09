@@ -48,7 +48,7 @@ fi
 # ------------------------------------------------------------
 printf "[LAUNCH] Checking rt-muse presence on remote host ..."
 ssh -p ${REMOTE_port} ${REMOTE_username}@${REMOTE_ip} -i ${REMOTE_private_key} \
-  'if [ ! -d "rt-muse" ]; then git clone https://github.com/martinamaggio/rt-muse.git &>/dev/null; fi'
+  'if [ ! -d "rt-muse" ]; then git clone https://github.com/michaellauer-laas/rt-muse.git &>/dev/null; fi'
 printf " done\n"
 
 printf "[LAUNCH] Checking rt-muse compilation on remote host ..."

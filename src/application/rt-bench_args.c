@@ -61,8 +61,8 @@ static inline void assure_type_is(struct json_object *obj,
 static inline struct json_object* get_in_object(struct json_object *where, 
   const char *what, int nullable) {
   struct json_object *to; 
-  to = json_object_object_get(where, what);
-  if (!nullable && is_error(to)) {
+  if (!nullable && json_object_object_get_ex(where, what, &to))
+  {
     log_critical(PFX "Error while parsing config:\n" 
         "%s", json_tokener_errors[-(unsigned long)to]);
     exit(EXIT_FAILURE);
@@ -333,7 +333,7 @@ static void parse_global(struct json_object *global, rtbench_options_t *opts) {
 static void get_opts_from_json_object(struct json_object *root, rtbench_options_t *opts) {
   struct json_object *global, *tasks, *resources, *shared;
 
-  if (is_error(root)) {
+  if (root == NULL) {
     log_error(PFX "Error while parsing input JSON: %s",
        json_tokener_errors[-(unsigned long)root]);
     exit(EXIT_FAILURE);
