@@ -61,9 +61,9 @@ static inline void assure_type_is(struct json_object *obj,
 static inline struct json_object* get_in_object(struct json_object *where, 
   const char *what, int nullable) {
   struct json_object *to; 
-  if (!nullable && json_object_object_get_ex(where, what, &to))
+  if (!nullable && !json_object_object_get_ex(where, what, &to))
   {
-      log_critical(PFX "Error while parsing config:\n");
+      log_critical(PFX "Error while parsing config: %s \n", what);
       // TODO: fix tokener error managment
      //   "%s", json_tokener_errors[-(unsigned long)to]);
     exit(EXIT_FAILURE);

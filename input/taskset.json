@@ -4,7 +4,7 @@
   "threads": {
     "thread1": {
       "priority": 10,
-      "cpus": [0,1,2],
+      "cpus": [0],
       "phases": {
         "c0": { "loops": 1000 },
         "l0": { "loops": 2000, "res": 0 },
@@ -13,12 +13,12 @@
         "m0": { "loops": 1000, "memory": 10 },
         "c1": { "loops": 5000 }
       },
-      "analysis": { "supply": true, "statistical": true, 
+      "analysis": { "supply": true, "statistical": true,
                     "runmap": true, "migrations": true }
     },
     "thread2": {
       "priority": 10,
-      "cpus": [0,1],
+      "cpus": [0],
       "phases": {
         "c0": { "loops": 5000 },
         "m0": { "loops": 1000, "memory": 10 },

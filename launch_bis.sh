@@ -68,7 +68,7 @@ printf " done\n"
 # ------------------------------------------------------------
 printf "[LAUNCH] Sending json file ..."
 scp -P ${REMOTE_port} ${REFERENCE_run} \
-  ${REMOTE_username}@${REMOTE_ip}:~/rt-muse/input/${REFERENCE_trace}.json -i ${REMOTE_private_key}\
+  ${REMOTE_username}@${REMOTE_ip}:~/rt-muse/input/${REFERENCE_trace}.json -i ${REMOTE_private_key}#\
   &> /dev/null
 printf " done\n"
 

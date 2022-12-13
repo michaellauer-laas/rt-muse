@@ -16,7 +16,7 @@
 
 /* boolean */
 #define FALSE 0
-#define TRUE  0
+#define TRUE  1
 
 typedef struct _ftrace_data_t {
   char *debugfs;
