@@ -95,7 +95,9 @@ ssh -t -p ${REMOTE_port} ${REMOTE_username}@${REMOTE_ip} -i ${REMOTE_private_key
   "cd rt-muse && \
   sudo $TRACE_CMD_COMMAND record -N ${LISTENER_IP}:${LISTENING_PORT} \
   -e 'sched_migrate*' \
-	~/rt-muse/$APP_binary ~/rt-muse/input/${REFERENCE_trace}.json \
+  -e 'sched_wakeup*' \
+  -e sched_switch \
+	$APP_binary ~/rt-muse/input/${REFERENCE_trace}.json \
 	&> ${RESULT_dir}/${REFERENCE_trace}/output_${REFERENCE_trace}.txt"
 kill -2 $LISTENER_PID
 wait $LISTENER_PID
@@ -113,9 +115,9 @@ grep 'begins job' $RESULT_dir/${REFERENCE_trace}/${REFERENCE_trace}.txt | \
 cp ${REFERENCE_run} ${RESULT_dir}/${REFERENCE_trace}/${REFERENCE_trace}.json
 printf ' done\n'
 
-printf "[LAUNCH] Removing unnecessary files ..."
-ssh -p ${REMOTE_port} ${REMOTE_username}@${REMOTE_ip} -i ${REMOTE_private_key}\
-  "rm -f rt-muse/*.log"
+# printf "[LAUNCH] Removing unnecessary files ..."
+# ssh -p ${REMOTE_port} ${REMOTE_username}@${REMOTE_ip} -i ${REMOTE_private_key}\
+#  "rm -f rt-muse/*.log"
 printf " done\n"
 
 ANALYSIS_DIR="../../analysis/" 

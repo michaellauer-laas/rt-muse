@@ -63,8 +63,9 @@ static inline struct json_object* get_in_object(struct json_object *where,
   struct json_object *to; 
   if (!nullable && json_object_object_get_ex(where, what, &to))
   {
-    log_critical(PFX "Error while parsing config:\n" 
-        "%s", json_tokener_errors[-(unsigned long)to]);
+      log_critical(PFX "Error while parsing config:\n");
+      // TODO: fix tokener error managment
+     //   "%s", json_tokener_errors[-(unsigned long)to]);
     exit(EXIT_FAILURE);
   }
   if (!nullable && strcmp(json_object_to_json_string(to), "null") == 0) {
@@ -334,8 +335,9 @@ static void get_opts_from_json_object(struct json_object *root, rtbench_options_
   struct json_object *global, *tasks, *resources, *shared;
 
   if (root == NULL) {
-    log_error(PFX "Error while parsing input JSON: %s",
-       json_tokener_errors[-(unsigned long)root]);
+      log_error(PFX "Error while parsing input JSON: %s");
+        // TODO fix json_tokener error management
+         //     ,json_tokener_errors[-(unsigned long)root]);
     exit(EXIT_FAILURE);
   }
 

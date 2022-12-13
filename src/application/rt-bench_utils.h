@@ -16,7 +16,7 @@
 #define LOG_PREFIX "[rt-bench] "
 #endif
 #ifndef LOG_LEVEL
-#define LOG_LEVEL 50
+#define LOG_LEVEL 100
 #endif
 
 #define LOG_LEVEL_DEBUG 100

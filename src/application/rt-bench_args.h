@@ -13,6 +13,7 @@
 #include <sys/stat.h>
 #include <string.h>
 #include <json-c/json.h>
+#include <json-c/json_tokener.h>
 #include <sys/types.h>
 #include <fcntl.h>
 
