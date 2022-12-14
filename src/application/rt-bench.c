@@ -376,8 +376,7 @@ int main(int argc, char* argv[]) {
   signal(SIGINT, shutdown);
 
   /* if using ftrace open trace and marker fds */
-//  if (opts.ftrace) {
-    if(1){
+  if (opts.ftrace) {
     log_notice("configuring ftrace");
     strcpy(tmp, ft_data.debugfs);
     strcat(tmp, "/tracing/tracing_on");

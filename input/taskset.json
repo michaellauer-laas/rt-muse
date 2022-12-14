@@ -4,7 +4,7 @@
   "threads": {
     "thread1": {
       "priority": 10,
-      "cpus": [0],
+      "cpus": [0,1,2],
       "phases": {
         "c0": { "loops": 1000 },
         "l0": { "loops": 2000, "res": 0 },
@@ -18,7 +18,7 @@
     },
     "thread2": {
       "priority": 10,
-      "cpus": [0],
+      "cpus": [0,1],
       "phases": {
         "c0": { "loops": 5000 },
         "m0": { "loops": 1000, "memory": 10 },

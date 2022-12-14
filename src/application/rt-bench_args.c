@@ -335,7 +335,7 @@ static void get_opts_from_json_object(struct json_object *root, rtbench_options_
   struct json_object *global, *tasks, *resources, *shared;
 
   if (root == NULL) {
-      log_error(PFX "Error while parsing input JSON: %s");
+      log_error(PFX "Error while parsing input JSON");
         // TODO fix json_tokener error management
          //     ,json_tokener_errors[-(unsigned long)root]);
     exit(EXIT_FAILURE);
